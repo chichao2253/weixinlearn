@@ -7,17 +7,20 @@
 define("TOKEN", "weixin");
 $wechatObj = new wechatCallbackapiTest();
 $wechatObj->valid();
+
 class wechatCallbackapiTest
 {
 	public function valid()
     {
         $echoStr = $_GET["echostr"];
+
         //valid signature , option
         if($this->checkSignature()){
         	echo $echoStr;
         	exit;
         }
     }
+
     public function responseMsg()
     {
 		//get post data, May be due to the different environments
@@ -32,7 +35,6 @@ class wechatCallbackapiTest
                 $fromUsername = $postObj->FromUserName;
                 $toUsername = $postObj->ToUserName;
                 $keyword = trim($postObj->Content);
-                $msgType = $postObj->MsgType;
                 $time = time();
                 $textTpl = "<xml>
 							<ToUserName><![CDATA[%s]]></ToUserName>
@@ -41,30 +43,23 @@ class wechatCallbackapiTest
 							<MsgType><![CDATA[%s]]></MsgType>
 							<Content><![CDATA[%s]]></Content>
 							<FuncFlag>0</FuncFlag>
-							</xml>"; 
-							if($msgType=='text'){
-								if(!empty( $keyword ))
+							</xml>";             
+				if(!empty( $keyword ))
                 {
               		$msgType = "text";
-                	$contentStr = "文本消息";
+                	$contentStr = "Welcome to wechat world!";
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{
                 	echo "Input something...";
                 }
-							}elseif($msgType=='image'){
-								$msgType = "text";
-                	$contentStr = "图片消息";
-                	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                	echo $resultStr;
-							}            
-				
 
         }else {
         	echo "";
         	exit;
         }
     }
+		
 	private function checkSignature()
 	{
         // you must define TOKEN by yourself
