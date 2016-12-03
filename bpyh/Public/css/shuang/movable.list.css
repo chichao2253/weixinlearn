@@ -1,0 +1,8 @@
+.movableBtnContainer {background : #f2f2f2; border: 1px #c3c3c3  solid; }
+.movableSelContainer {background : #FFFFFF; border: 1px #c3c3c3  solid; text-align:center;}
+.movableBtnContainer .title, .movableSelContainer .title{font: 10pt bold; text-align:center;background:url("images/header_bg.jpg"); color:#383838; border-bottom: 0px #B6B6B6 solid; }
+.movableBtnContainer input.smallButton, .movableSelContainer input.smallButton{margin:2px 0px 2px 0px; font-size: 9pt; text-decoration: none; border: 1px solid #c3c3c3; background: #F4FBE1 url('button_bg.gif'); }
+
+.movableSelContainer .allBar{solid; margin-top:2px}
+.movableCenter{background : #f2f2f2; border: 1px #c3c3c3  solid; border-left:0px; border-right:0px;}
+/*top:expression((this.parentElement.offsetHeight-this.offsetHeight)/2);  left:expression((this.parentElement.offsetWidth-this.offsetWidth)/2);*/

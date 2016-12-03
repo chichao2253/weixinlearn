@@ -1,0 +1,36 @@
+[ 2016-11-16T13:33:48+08:00 ] ::1 /index.php/SITE_IMGuser2-160x160.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+ERR: 无法加载模块:SITE_IMGuser2-160x160
+
+[ 2016-11-16T13:36:12+08:00 ] ::1 /index.php/SITE_IMGuser2-160x160.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+ERR: 无法加载模块:SITE_IMGuser2-160x160
+
+[ 2016-11-16T13:40:19+08:00 ] ::1 /index.php/SITE_IMGuser2-160x160.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+ERR: 无法加载模块:SITE_IMGuser2-160x160
+
+[ 2016-11-16T13:40:21+08:00 ] ::1 /index.php/SITE_IMGuser2-160x160.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001046s ]
+ERR: 无法加载模块:SITE_IMGuser2-160x160
+
+[ 2016-11-16T13:40:32+08:00 ] ::1 /index.php/SITE_IMGuser2-160x160.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+ERR: 无法加载模块:SITE_IMGuser2-160x160
+
+[ 2016-11-16T13:40:40+08:00 ] ::1 /index.php/SITE_IMGuser2-160x160.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+ERR: 无法加载模块:SITE_IMGuser2-160x160
+
