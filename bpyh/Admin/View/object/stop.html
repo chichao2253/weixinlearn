@@ -84,7 +84,7 @@
                 </tr>
                 <tr class="midTable1td4">
                   <td colspan="6" align="right">
-				  	<input name="Submit3" type="button" onclick="tingyong()" class="button" value="停用">
+				  	<input name="Submit3" type="button" onclick="tingyong(-1)" class="button" value="停用">
 				  	
                   </td>
                 </tr>
@@ -125,7 +125,7 @@
  <script>
 	
 	$(function(){		
-    			$.get("http://localhost/index.php/Admin/object/shenpi",{
+    			$.get("http://localhost/index.php/Admin/object/stopshuju",{
     				version:0.1,
     				 			
     				
@@ -137,7 +137,7 @@
     						  "<td>"+item.add_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
-    						  "<td>"+item.textarea+"</td>"+
+    						  "<td>"+item.biaoti+"</td>"+
     						  "<td>"+item.add_user+"</td>"+
     						  "</tr>"
     					);
@@ -172,7 +172,7 @@
     				});
     			},"json");
 	}
-	function shenhe(ojb){
+	function tingyong(ojb){
 		  $("#form_ck input[type='checkbox']").each(function () {
                     if ($(this).is(':checked') ==true) {
                     	ajaxshenpi($(this).val(),ojb);
@@ -181,14 +181,11 @@
                 })
 	}
 	function ajaxshenpi(obj,ojb){
-		$.get('http://localhost/index.php/Admin/object/ajaxshenpi',{
+		$.get('http://localhost/index.php/Admin/object/ajaxtingyong',{
 			id:obj,staus:ojb
 		},function(data,textStatus){
     		if(data.err==1){
-    			alert('审核通过');
-    			location.href="";
-    		}else if(data.err==-1){
-    			alert('审核拒绝');
+    			alert('停用成功');
     			location.href="";
     		}else{
     			alert('审核错误');

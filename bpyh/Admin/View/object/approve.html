@@ -66,7 +66,7 @@
               </tr>
               <tr align="right">
                 <td colspan="6" class="inputContent">
-                  <input type="button" value=" 查 询" onclick="chaxun()">
+                  <input type="button" value=" 查 询" onclick="chaxunshenpi()">
                 </td>
               </tr>
             </table>
@@ -84,7 +84,7 @@
                 </tr>
                 <tr class="midTable1td4">
                   <td colspan="6" align="right">
-				  	<input name="Submit3" type="button" onclick="shenhe(2)" class="button" value="审批通过">
+				  	<input name="Submit3" type="button" onclick="shenhe(1)" class="button" value="审批通过">
 				  	<input name="Submit3" type="button" onclick="shenhe(0)" class="button" value="审批拒绝">					
                   </td>
                 </tr>
@@ -127,8 +127,6 @@
 	$(function(){		
     			$.get("http://localhost/index.php/Admin/object/shenpi",{
     				version:0.1,
-    				 			
-    				
     			},function(data,textStatus){    				
     				$.each(data, function(i,item) {    					
     						$("#shenhe").after(
@@ -137,7 +135,7 @@
     						  "<td>"+item.add_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
-    						  "<td>"+item.textarea+"</td>"+
+    						  "<td>"+item.biaoti+"</td>"+
     						  "<td>"+item.add_user+"</td>"+
     						  "</tr>"
     					);
@@ -148,8 +146,9 @@
 	
 </script>
 <script>
-	function chaxun(){
-		$.get("http://localhost/index.php/Admin/object/chaxun",{
+	function chaxunshenpi(){
+		
+		$.get("http://localhost/index.php/Admin/object/chaxunshenpi",{
     			biaoti:$("#biaoti").val(),
     			select:$("#select").val(),
     			select1:$("#select2").val(),
@@ -164,7 +163,7 @@
     						  "<td>"+item.add_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
-    						  "<td>"+item.textarea+"</td>"+
+    						  "<td>"+item.biaoti+"</td>"+
     						  "<td>"+item.add_user+"</td>"+
     						  "</tr>"
     					);
@@ -176,7 +175,7 @@
 		  $("#form_ck input[type='checkbox']").each(function () {
                     if ($(this).is(':checked') ==true) {
                     	ajaxshenpi($(this).val(),ojb);
-                      
+                  
                     }
                 })
 	}

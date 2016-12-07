@@ -23,7 +23,8 @@
     <td align="center" class="maincontent">&nbsp;</td>
   </tr>
   <tr valign="top">
-    <td align="center" class="maincontent"><form name="form1" method="post" action="">
+    <td align="center" class="maincontent">
+    	<form name="form1" method="post" action="__CONTROLLER__/ajaxxiugai">
         <table width="96%" border="0" cellpadding="0" cellspacing="2" class="inputTable">
           <tr>
             <td class="inputTitle">物流需求审批</td>
@@ -84,7 +85,7 @@
                 </tr>
                 <tr class="midTable1td4">
                   <td colspan="6" align="right">
-				  	<input name="Submit3" type="button" onclick="xiugai()" class="button" value="修改">
+				  		<input name="Submit3" type="submit" onclick="xiugai(1)" class="button" value="修改">
 				  	
                   </td>
                 </tr>
@@ -125,10 +126,8 @@
  <script>
 	
 	$(function(){		
-    			$.get("http://localhost/index.php/Admin/object/shenpi",{
-    				version:0.1,
-    				 			
-    				
+    			$.get("http://localhost/index.php/Admin/object/updatashuju",{
+    				version:0.1,    				 			    				
     			},function(data,textStatus){    				
     				$.each(data, function(i,item) {    					
     						$("#shenhe").after(
@@ -137,7 +136,7 @@
     						  "<td>"+item.add_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
-    						  "<td>"+item.textarea+"</td>"+
+    						  "<td>"+item.biaoti+"</td>"+
     						  "<td>"+item.add_user+"</td>"+
     						  "</tr>"
     					);
@@ -164,7 +163,7 @@
     						  "<td>"+item.add_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
-    						  "<td>"+item.textarea+"</td>"+
+    						  "<td name='biaoti'>"+item.biaoti+"</td>"+
     						  "<td>"+item.add_user+"</td>"+
     						  "</tr>"
     					);
@@ -172,7 +171,7 @@
     				});
     			},"json");
 	}
-	function shenhe(ojb){
+	function xiugai(ojb){
 		  $("#form_ck input[type='checkbox']").each(function () {
                     if ($(this).is(':checked') ==true) {
                     	ajaxshenpi($(this).val(),ojb);
@@ -181,19 +180,10 @@
                 })
 	}
 	function ajaxshenpi(obj,ojb){
-		$.get('http://localhost/index.php/Admin/object/ajaxshenpi',{
+		$.get('http://localhost/index.php/Admin/object/ajaxxiugai',{
 			id:obj,staus:ojb
 		},function(data,textStatus){
-    		if(data.err==1){
-    			alert('审核通过');
-    			location.href="";
-    		}else if(data.err==-1){
-    			alert('审核拒绝');
-    			location.href="";
-    		}else{
-    			alert('审核错误');
-    			
-    		}
+    	
     	},"json")
 	}
 </script>

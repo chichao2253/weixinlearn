@@ -30,7 +30,7 @@
 </tr>
 <tr valign="top">
 <td align="center" class="maincontent">
-	<form action="/index.php/Admin/Object/add" id="addpic" method="post" target="main" enctype="multipart/form-data">
+	<form action="/index.php/Admin/Object/add" id="addpic" method="post"  enctype="multipart/form-data">
 				<input hidden="hidden" name="add_time" />
 					<input hidden="hidden" name="fabu_user" />
         <table width="96%" border="0" cellpadding="0" cellspacing="2" class="inputTable">

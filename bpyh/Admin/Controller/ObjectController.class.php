@@ -6,7 +6,7 @@ class ObjectController extends Controller {
     	if(!empty($_POST)){
     		$_POST['add_time']=date('Y-m-d H:i:s',time());
     		$_POST['add_user']=session('mg_name');
-    		echo $_POST['staus'];
+    		$echostaus=$_POST['staus'];
     		if($_POST['staus']=='保存'){
     			$_POST['staus']=0;
     		}else{
@@ -28,8 +28,7 @@ class ObjectController extends Controller {
 		    	$obj->create();
 		    	$addrs=$obj->add();
 		    	if($addrs){
-		    		
-		    		echo "添加成功";
+		    		echo $echostaus."成功";
 		    	}else{
 		    		echo "添加失败";
 		    	}
@@ -39,6 +38,7 @@ class ObjectController extends Controller {
     	}
     	
     }
+    
     public function edict(){
     	if(!empty($_GET)){
     		$obj=M('Object');
@@ -87,8 +87,8 @@ class ObjectController extends Controller {
     public function ajaxshenpi(){
     	if(!empty($_GET)){
     		$obj=M('Object');
-    		if($_GET['staus']==2){
-    			$data['staus']  = 2;
+    		if($_GET['staus']==1){
+    			$data['staus']  = 1;
     			$data['err']=1;
     		}else{
     			$data['staus']  = 0;
@@ -105,15 +105,74 @@ class ObjectController extends Controller {
     	}
     	
     }
+    public function ajaxtingyong(){
+    	if(!empty($_GET)){
+    		$obj=M('Object');
+    		if($_GET['staus']==-1){
+    			$data['staus'] = -1;
+    			$data['err']=1;
+    		}    		
+    		$res=$obj->where("ob_id='".$_GET['id']."'")->save($data);
+    		if($res){
+    			
+    			$this->ajaxReturn($data,'json');
+    		}
+    		$data['err']=0;
+    		$this->ajaxReturn($data,'json');
+    	}
+    	
+    }
+     public function ajaxxiugai(){    	
+    	if(!empty($_POST)){
+    			
+    			$obj=M('Object');
+    			$res=$obj->where("ob_id='".$_POST['radiobutton']."'")->select();
+    			$this->assign('res',$obj);
+    			$this->display();
+    	}else{
+    		$this->display();
+    	}
+    	
+    }
     public function shenpi(){
     	if(!empty($_GET)){
     		$obj=M('Object');
-    		$rs=$obj->where('staus=1||staus=0')->select() ;
+    		$rs=$obj->where('staus=0')->select() ;
     		echo json_encode($rs);
     	}else{
     		$this->display();
     	}
     }
+    public function update(){
+    	if(!empty($_POST)){
+    			
+    			$obj=M('Object');
+    			$res=$obj->where("ob_id='".$_POST['radiobutton']."'")->select();
+    			$this->assign('res',$obj);
+    		
+    	}else{
+    		$this->display();
+    	}
+    	
+    }
+      public function updatashuju(){
+    	if(!empty($_GET)){
+    		$obj=M('Object');
+    		$rs=$obj->where('staus=0 || staus =1')->select() ;
+    		echo json_encode($rs);
+    	}else{
+    		$this->display();
+    	}
+     }
+      public function stopshuju(){
+    	if(!empty($_GET)){
+    		$obj=M('Object');
+    		$rs=$obj->where('staus =1')->select() ;
+    		echo json_encode($rs);
+    	}else{
+    		$this->display();
+    	}
+     }
     public function guanli(){
     	
     	if(!empty($_GET)){
@@ -146,6 +205,27 @@ class ObjectController extends Controller {
     		echo json_encode($rs);
     	}else{
     		$this->display();
+    	}
+    }
+    
+    public function chaxunshenpi(){    	
+    	if(!empty($_GET)){
+    		$obj=M('Object');
+    		$biaoti=$_GET['biaoti'];
+    		$select=$_GET['select'];
+    		$select1=$_GET['select1'];
+    		$add_user=$_GET['add_user'];
+    		$where=array(
+    			'staus'=>0,
+    			'biaoti'=>$biaoti,
+    			'select'=>$select,
+    			'select1'=>$select1,
+				'add_name'=>$add_user
+			);
+			
+    		$rs=$obj->where($where)->select();
+    		
+    		echo json_encode($rs);
     	}
     }
     	
