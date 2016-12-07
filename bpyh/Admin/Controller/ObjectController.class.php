@@ -28,7 +28,7 @@ class ObjectController extends Controller {
 		    	$obj->create();
 		    	$addrs=$obj->add();
 		    	if($addrs){
-		    		echo $echostaus."成功";
+		    		$this->success($echostaus."成功");
 		    	}else{
 		    		echo "添加失败";
 		    	}
@@ -124,11 +124,50 @@ class ObjectController extends Controller {
     }
      public function ajaxxiugai(){    	
     	if(!empty($_POST)){
+    			if(!empty($_POST['ob_id'])){
+    				
+		    		$_POST['updata_time']=date('Y-m-d H:i:s',time());
+		    		$_POST['add_user']=session('mg_name');
+		    		$echostaus=$_POST['staus'];
+		    		if($_POST['staus']=='保存'){
+		    			$_POST['staus']=0;
+		    		}else{
+		    			$_POST['staus']=1;
+		    		}
+		    		if(!empty($_FILES)){
+		    			$config=array(
+		    			'rootPath'=>'./bpyh/public/',
+		    			'savePath'=>'upload/'
+		    			);
+		    			$uploadpic= new \Think\Upload($config);
+		    			$uploadfile= new \Think\Upload($config);
+		    			$rspic=$uploadpic->uploadOne($_FILES['pic']);
+		    			$rsfujian=$uploadfile->uploadOne($_FILES['fujian']);
+		    				$_POST['pic']=$rspic['savepath'].$rspic['savename'];
+		    				$_POST['fujian']=$rsfujian['savepath'].$rsfujian['savename'];
+		    		}
+				    	$obj=M('Object');
+				    	$data_u['biaoti']=$_POST['biaoti'];
+				    	$data_u['updata_time']=$_POST['updata_time'];
+				    	$data_u['select']=$_POST['select'];
+				    	$data_u['select2']=$_POST['select2'];
+				    	$data_u['textarea']=$_POST['textarea'];
+				    	$addrs=$obj->where("ob_id='".$_POST['ob_id']."'")->save($data_u);
+				    	
+				    	if($addrs){
+				    		$this->success('修改成功');
+				    	}else{
+				    		echo "添加失败";
+				    	}
+		    				
+    			}else{
+    				$obj=M('Object');
+    				$res=$obj->where("ob_id='".$_POST['radiobutton']."'")->select();
     			
-    			$obj=M('Object');
-    			$res=$obj->where("ob_id='".$_POST['radiobutton']."'")->select();
-    			$this->assign('res',$obj);
-    			$this->display();
+    				$this->assign('res',$res['0']);
+    				$this->display();
+    			}   			
+    			
     	}else{
     		$this->display();
     	}
@@ -213,13 +252,13 @@ class ObjectController extends Controller {
     		$obj=M('Object');
     		$biaoti=$_GET['biaoti'];
     		$select=$_GET['select'];
-    		$select1=$_GET['select1'];
+    		$select2=$_GET['select2'];
     		$add_user=$_GET['add_user'];
     		$where=array(
     			'staus'=>0,
     			'biaoti'=>$biaoti,
     			'select'=>$select,
-    			'select1'=>$select1,
+    			'select2'=>$select2,
 				'add_name'=>$add_user
 			);
 			

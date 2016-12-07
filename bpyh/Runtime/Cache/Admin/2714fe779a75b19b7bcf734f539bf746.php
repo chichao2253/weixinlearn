@@ -33,6 +33,8 @@
 	<form action="/index.php/Admin/Object/ajaxxiugai" id="addpic" method="post"  enctype="multipart/form-data">
 				<input hidden="hidden" name="add_time" />
 					<input hidden="hidden" name="fabu_user" />
+					<input hidden="hidden" value="<?php echo ($res["ob_id"]); ?>" name="ob_id" />
+					
         <table width="96%" border="0" cellpadding="0" cellspacing="2" class="inputTable">
           <tr> 
             <td class="inputTitle">新需求发布</td>
@@ -41,12 +43,12 @@
             <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr> 
                   <td width="6%" class="inputHeader">标题</td>
-                  <td colspan="5" class="inputContent"><input name="biaoti" type="text" class="text width100" value=""> 
+                  <td colspan="5" class="inputContent"><input name="biaoti" type="text" class="text width100" value="<?php echo ($res["biaoti"]); ?>" > 
                   </td>
                 </tr>
                 <tr> 
                   <td width="6%" nowrap class="inputHeader">区域</td>
-                  <td width="16%"><select name="select">
+                  <td width="16%"><select name="select" value="<?php echo ($res["select"]); ?>">
                       <option>东北</option>
                       <option>西北</option>
                       <option>北方</option>
@@ -56,7 +58,7 @@
                       <option>华中</option>
                     </select> </td>
                   <td width="7%" nowrap class="inputHeader">行业</td>
-                  <td width="13%"><select name="select2">
+                  <td width="13%"><select name="select2" value="<?php echo ($res["select2"]); ?>">
                       <option>制造 
                       <option>能源 
                       <option>运输 
@@ -70,7 +72,7 @@
                   <td colspan="6" class="inputContent"> 文字信息 </td>
                 </tr>
                 <tr> 
-                  <td colspan="6" class="inputContent"><textarea name="textarea" cols="60" rows="5]" class="text width100"></textarea> 
+                  <td colspan="6" class="inputContent"><textarea name="textarea" cols="60" rows="5]" value="<?php echo ($res["textarea"]); ?>" class="text width100"></textarea> 
                   </td>
                 </tr>
               </table>

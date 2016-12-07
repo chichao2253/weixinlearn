@@ -53,7 +53,7 @@
                 <td nowrap class="inputHeader">更新时间</td>
                 <td class="inputContent">&nbsp; </td>
                 <td class="inputHeader">行业</td>
-                <td class="inputContent"><select id="select2" name="select3">
+                <td class="inputContent"><select id="select2" name="select2">
                     <option>制造
                     <option>能源
                     <option>运输
@@ -152,7 +152,7 @@
 		$.get("http://localhost/index.php/Admin/object/chaxun",{
     			biaoti:$("#biaoti").val(),
     			select:$("#select").val(),
-    			select1:$("#select2").val(),
+    			select2:$("#select2").val(),
     			add_user:$("#add_user").val()
     			},function(data,textStatus){    
     				$(".zhengshi").hide();
@@ -161,7 +161,7 @@
     						$("#shenhe").after(
     						  "<tr style='font-weight:bold;'>"+
     						  "<td><input type='checkbox' name='radiobutton' value="+item.ob_id+"></td>"+
-    						  "<td>"+item.add_time+"</td>"+
+    						  "<td>"+item.update_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
     						  "<td>"+item.textarea+"</td>"+

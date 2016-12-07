@@ -133,7 +133,7 @@
     						$("#shenhe").after(
     						  "<tr class='zhengshi' style='font-weight:bold;'>"+
     						  "<td><input type='checkbox' name='radiobutton' value="+item.ob_id+"></td>"+
-    						  "<td>"+item.add_time+"</td>"+
+    						  "<td>"+item.updata_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
     						  "<td>"+item.biaoti+"</td>"+
@@ -160,7 +160,7 @@
     						$("#shenhe").after(
     						  "<tr style='font-weight:bold;'>"+
     						  "<td><input type='checkbox' name='radiobutton' value="+item.ob_id+"></td>"+
-    						  "<td>"+item.add_time+"</td>"+
+    						  "<td>"+item.updata_time+"</td>"+
     						  "<td>"+item.select+"</td>"+
     						  "<td>"+item.select2+"</td>"+
     						  "<td name='biaoti'>"+item.biaoti+"</td>"+
