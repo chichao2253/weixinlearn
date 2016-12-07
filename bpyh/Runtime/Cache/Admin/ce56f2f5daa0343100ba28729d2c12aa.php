@@ -11,8 +11,6 @@
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <!-- #BeginLibraryItem "/Library/header.lbi" --><script language="JavaScript1.2" src="<?php echo (SITE_JS); ?>coolmenus4.js"></script>
 <script language="JavaScript1.2" src="<?php echo (SITE_JS); ?>/cm_addins.js"></script>
-
-
 <table width="1224" border="0" cellpadding="0" cellspacing="0" class="yrh">
   <tr>
     <td height="17"><a href="home.htm">主页</a> &raquo; 物流需求审批</td>

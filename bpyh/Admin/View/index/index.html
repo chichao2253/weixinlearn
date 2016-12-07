@@ -197,19 +197,24 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">菜单</li>
+            <foreach name='pinfo' item='infoz'>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
-                <span>项目</span>
+                <span>	{$infoz.auth_name}</span>
                 <span class="label label-primary pull-right"></span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{:U('object/add')}" target="mainform"><i class="fa fa-circle-o"></i> 项目发布</a></li>
-                 <li><a href="{:U('object/approve')}" target="mainform"><i class="fa fa-circle-o"></i>项目审批</a></li>
-                <li><a href="{:U('object/update')}" target="mainform"><i class="fa fa-circle-o"></i> 项目修改</a></li>
-                <li><a href="{:U('object/stop')}" target="mainform"><i class="fa fa-circle-o"></i> 项目停用</a></li>
+              	<foreach name='sinfo' item='info'>
+              		 <if condition="$info['auth_pid'] eq  $infoz['auth_id']"> 											
+	              		 <li><a href="{:U($info['auth_c'].'/'.$info['auth_a'])}" target="mainform"><i class="fa fa-circle-o"></i> {$info['auth_name']}</a></li>
+	                	
+                	 </if>
+              	</foreach>              	               
               </ul>
             </li>
+           </foreach>
+            
           </ul>
         </section>
         <!-- /.sidebar -->

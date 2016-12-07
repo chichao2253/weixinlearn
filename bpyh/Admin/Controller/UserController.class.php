@@ -12,8 +12,8 @@ class UserController extends Controller {
     		}else{
     			session('[start]');
     			session('mg_name',$res['mg_name']);
-    			$this->redirect('Index/index');
-    			echo "登陆成功";
+    			session('mg_role_id',$res['mg_role_id']);    			
+    			$this->redirect('Index/index');    			
     		}
     		
     	}else{

@@ -197,19 +197,17 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">菜单</li>
-            <li class="treeview">
+            <?php if(is_array($pinfo)): foreach($pinfo as $key=>$infoz): ?><li class="treeview">
               <a href="#">
                 <i class="fa fa-files-o"></i>
-                <span>项目</span>
+                <span>	<?php echo ($infoz["auth_name"]); ?></span>
                 <span class="label label-primary pull-right"></span><i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?php echo U('object/add');?>" target="mainform"><i class="fa fa-circle-o"></i> 项目发布</a></li>
-                 <li><a href="<?php echo U('object/approve');?>" target="mainform"><i class="fa fa-circle-o"></i>项目审批</a></li>
-                <li><a href="<?php echo U('object/update');?>" target="mainform"><i class="fa fa-circle-o"></i> 项目修改</a></li>
-                <li><a href="<?php echo U('object/stop');?>" target="mainform"><i class="fa fa-circle-o"></i> 项目停用</a></li>
+              	<?php if(is_array($sinfo)): foreach($sinfo as $key=>$info): if($info['auth_pid'] == $infoz['auth_id']): ?><li><a href="<?php echo U($info['auth_c'].'/'.$info['auth_a']);?>" target="mainform"><i class="fa fa-circle-o"></i> <?php echo ($info['auth_name']); ?></a></li><?php endif; endforeach; endif; ?>              	               
               </ul>
-            </li>
+            </li><?php endforeach; endif; ?>
+            
           </ul>
         </section>
         <!-- /.sidebar -->
