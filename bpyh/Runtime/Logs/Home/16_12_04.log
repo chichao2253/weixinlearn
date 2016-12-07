@@ -1,0 +1,131 @@
+[ 2016-12-04T10:57:57+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011440s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014061s ]
+
+ ]
+
+[ 2016-12-04T10:57:59+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+
+[ 2016-12-04T10:58:13+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009369s ]
+
+[ 2016-12-04T10:58:20+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2016-12-04T10:58:21+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000488s ]
+
+[ 2016-12-04T10:58:35+08:00 ] ::1 /index.php/home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2016-12-04T10:58:46+08:00 ] ::1 /index.php/home/Index/getUserOpenId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+ERR: Think\Controller:http_curl方法不存在！
+
+[ 2016-12-04T11:00:33+08:00 ] ::1 /index.php/home/Index/getUserOpenId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+
+[ 2016-12-04T11:00:42+08:00 ] ::1 /index.php/home/Index/getUserOpenId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+NOTIC: [2] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 17 行.
+NOTIC: [2] file_get_contents(https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxbc1a412f433ca202&amp;secret=e71f657bf1080c5aac50ad9f89c6fe4e&amp;code=CODE&amp;grant_type=authorization_code ) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 17 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2016-12-04T11:01:10+08:00 ] ::1 /index.php/home/Index/getUserOpenId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000808s ]
+NOTIC: [2] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 17 行.
+NOTIC: [2] file_get_contents(https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxbc1a412f433ca202&amp;secret=e71f657bf1080c5aac50ad9f89c6fe4e&amp;code=CODE&amp;grant_type=authorization_code ) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 17 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000742s ]
+
+[ 2016-12-04T11:01:30+08:00 ] ::1 /index.php/home/Index/getUserOpenId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+NOTIC: [2] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 17 行.
+NOTIC: [2] file_get_contents(https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxbc1a412f433ca202&amp;secret=e71f657bf1080c5aac50ad9f89c6fe4e&amp;code=CODE&amp;grant_type=authorization_code ) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 17 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2016-12-04T11:02:10+08:00 ] ::1 /index.php/home/Index/getUserOpenId
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000734s ]
+NOTIC: [2] file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 18 行.
+NOTIC: [2] file_get_contents(https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxbc1a412f433ca202&amp;secret=e71f657bf1080c5aac50ad9f89c6fe4e&amp;code=CODE&amp;grant_type=authorization_code ) [<a href='function.file-get-contents'>function.file-get-contents</a>]: failed to open stream: No such file or directory D:\WWW_weixinjinjie\bpyh\Home\Controller\IndexController.class.php 第 18 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000591s ]
+
